@@ -1,0 +1,22 @@
+items = []
+size = int(input("Enter number of items: "))
+
+# taking input without using append()
+for i in range(size):
+    item = input("Enter item: ")
+    items = items + [item]   # manual list expansion
+
+unique_items = []
+for item in items:
+    # manually check duplicates
+    found = False
+    for u in unique_items:
+        if item == u:
+            found = True
+            break
+
+    if not found:
+        unique_items = unique_items + [item]  # manual growth again
+
+print("List after removing duplicates:")
+print(unique_items)

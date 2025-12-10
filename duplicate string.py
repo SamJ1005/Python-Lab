@@ -1,8 +1,20 @@
-items = ["apple", "banana", "apple", "orange", "banana"]
-unique = []   
+items = []
+size = int(input("Enter number of items: "))
 
-for item in items:       # look at each item
-    if item not in unique:   # only add if not already in unique
-        unique.append(item)
+for i in range(size):
+    item = input("Enter item: ")
+    items = items + [item]  
 
-print(unique)
+unique_items = []
+for item in items:
+    found = False
+    for u in unique_items:
+        if item == u:
+            found = True
+            break
+
+    if not found:
+        unique_items = unique_items + [item] 
+
+print("List after removing duplicates:")
+print(unique_items)

@@ -1,6 +1,11 @@
-items = input("Enter elements separated by space: ").split()
-x = input("Enter the element to count: ")
+items = []
+n = int(input("Enter the range: "))
 
+for i in range(n):
+    item = input("Enter an element: ")
+    items.append(item)
+
+x = input("Enter the element to count: ")
 count = items.count(x)
 
 print(f"List: {items}")

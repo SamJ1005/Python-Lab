@@ -1,8 +1,8 @@
-text = "hello"
+text = input("Enter a string to reverse: ")
 rev = text[::-1]   # slicing to reverse the string
 print(rev)
 
-text = "Python"
+text = input("Enter a string to reverse: ")
 rev = ""           # empty string to build the reverse
 
 for ch in text:    # take each character

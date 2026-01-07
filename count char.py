@@ -1,4 +1,4 @@
-text = "hello world"   # you can change this string
+text = input("Enter a string: ")
 count = {}             # empty dictionary to store counts
 
 for ch in text:        # go through each character

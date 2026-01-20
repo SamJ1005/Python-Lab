@@ -9,11 +9,7 @@ class Car:
         print(self.year, self.make, self.model, "- Price:", self.price)
 
 
-<<<<<<< HEAD
 n = int(input("How many cars need to enter? "))
-=======
-n = int(input("How many cars want to enter? "))
->>>>>>> 999559eab02dcb9ce675b25dca3b4c09f50e3319
 cars = []
 
 for i in range(n):

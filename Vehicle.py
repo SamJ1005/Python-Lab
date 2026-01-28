@@ -1,51 +1,47 @@
 class Vehicle:
-    def __init__(self, speed, fuel):
-        self.speed = speed
-        self.fuel = fuel
+    def __init__(self, s, f):
+        self.s, self.f = s, f
 
-    def display_details(self):
-        print("Speed:", self.speed, "km/h")
-        print("Fuel Type:", self.fuel)
+    def show(self):
+        print("Speed:", self.s, "km/h | Fuel:", self.f)
 
 class Car(Vehicle):
-    def car_feature(self):
-        print("Vehicle Type: Car")
-        print("Feature: Air Conditioning")
+    def extra(self):
+        print("Type: Car | Feature: AC")
 
 class Motorcycle(Vehicle):
-    def wheel_type(self):
-        print("Vehicle Type: Motorcycle")
-        print("Wheel Type: Two Wheeler")
+    def extra(self):
+        print("Type: Motorcycle | Wheels: Two")
 
 class Truck(Vehicle):
-    def cargo_capacity(self):
-        capacity = float(input("Enter cargo capacity (in tons): "))
-        print("Vehicle Type: Truck")
-        print("Cargo Capacity:", capacity, "tons")
+    def __init__(self, s, f, c):
+        super().__init__(s, f)
+        self.c = c
 
-speed = int(input("Enter vehicle speed (km/h): "))
-fuel = input("Enter fuel type: ")
+    def extra(self):
+        print("Type: Truck | Cargo:", self.c, "tons")
 
-print("\nSelect Vehicle")
-print("1. Car")
-print("2. Motorcycle")
-print("3. Truck")
+while True:
+    print("\n1.Car  2.Motorcycle  3.Truck  4.Exit")
+    ch = int(input("Choice: "))
 
-choice = int(input("Enter your choice: "))
-if choice == 1:
-    vehicle = Car(speed, fuel)
-    vehicle.display_details()
-    vehicle.car_feature()
+    if ch == 4:
+        break
 
-elif choice == 2:
-    vehicle = Motorcycle(speed, fuel)
-    vehicle.display_details()
-    vehicle.wheel_type()
+    if ch not in (1, 2, 3):
+        print("Invalid choice")
+        continue
 
-elif choice == 3:
-    vehicle = Truck(speed, fuel)
-    vehicle.display_details()
-    vehicle.cargo_capacity()
+    s = int(input("Speed: "))
+    f = input("Fuel: ")
 
-else:
-    print("Invalid choice")
+    if ch == 3:
+        c = float(input("Cargo capacity (tons): "))
+        v = Truck(s, f, c)
+    elif ch == 1:
+        v = Car(s, f)
+    else:
+        v = Motorcycle(s, f)
+
+    v.show()
+    v.extra()

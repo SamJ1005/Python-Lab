@@ -8,7 +8,6 @@ class Car:
     def display(self):
         print(self.year, self.make, self.model, "- Price:", self.price)
 
-
 n = int(input("How many cars need to enter? "))
 cars = []
 

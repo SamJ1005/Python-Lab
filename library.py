@@ -18,7 +18,6 @@ for i in range(n):
     title = input("Enter title: ")
     author = input("Enter author: ")
     price = float(input("Enter price: "))
-
     books.append(Book(title, author, price))
 
 print("\n--- Book Details ---")

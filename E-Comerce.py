@@ -7,7 +7,6 @@ class Product:
         print("Product Name:", self.name)
         print("Price: ₹", self.price)
 
-
 class ElectronicsProduct(Product):
     def __init__(self, name, price, brand, warranty):
         super().__init__(name, price)

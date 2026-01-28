@@ -11,9 +11,9 @@ class Car(Vehicle):
 
 class Motorcycle(Vehicle):
     def extra(self):
-        print("Type: Motorcycle | Wheels: Two")
+        print("Type: Motorcycle | Wheels: Two Wheeler")
 
-class Truck(Vehicle):
+class Truck(Vehicle):   
     def __init__(self, s, f, c):
         super().__init__(s, f)
         self.c = c
@@ -24,8 +24,9 @@ class Truck(Vehicle):
 while True:
     print("\n1.Car  2.Motorcycle  3.Truck  4.Exit")
     ch = int(input("Choice: "))
-
+    
     if ch == 4:
+        print("Exiting Vehicle...")
         break
 
     if ch not in (1, 2, 3):
@@ -35,13 +36,14 @@ while True:
     s = int(input("Speed: "))
     f = input("Fuel: ")
 
-    if ch == 3:
+    if ch == 1:
+        v = Car(s, f)
+    elif ch == 2:
+        v = Motorcycle(s, f)
+    elif ch == 3:
         c = float(input("Cargo capacity (tons): "))
         v = Truck(s, f, c)
-    elif ch == 1:
-        v = Car(s, f)
-    else:
-        v = Motorcycle(s, f)
 
     v.show()
     v.extra()
+    

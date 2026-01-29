@@ -1,8 +1,12 @@
 class Vehicle:
-    def __init__(self, s, f):
+    def __init__(self, s=0, f=''):
         self.s, self.f = s, f
 
     def show(self):
+        self.s = int(input("Speed: "))
+        self.f = input("Fuel: ")
+
+    def display(self):
         print("Speed:", self.s, "km/h | Fuel:", self.f)
 
 class Car(Vehicle):
@@ -14,36 +18,31 @@ class Motorcycle(Vehicle):
         print("Type: Motorcycle | Wheels: Two Wheeler")
 
 class Truck(Vehicle):   
-    def __init__(self, s, f, c):
+    def __init__(self, s=0, f='', c=0):
         super().__init__(s, f)
         self.c = c
 
     def extra(self):
+        self.c = float(input("Cargo capacity (tons): "))
         print("Type: Truck | Cargo:", self.c, "tons")
 
 while True:
     print("\n1.Car  2.Motorcycle  3.Truck  4.Exit")
     ch = int(input("Choice: "))
-    
-    if ch == 4:
+
+    if ch == 1:
+        v = Car()
+    elif ch == 2:
+        v = Motorcycle()
+    elif ch == 3:
+        v = Truck()
+    elif ch == 4:
         print("Exiting Vehicle...")
         break
-
-    if ch not in (1, 2, 3):
+    else:
         print("Invalid choice")
         continue
 
-    s = int(input("Speed: "))
-    f = input("Fuel: ")
-
-    if ch == 1:
-        v = Car(s, f)
-    elif ch == 2:
-        v = Motorcycle(s, f)
-    elif ch == 3:
-        c = float(input("Cargo capacity (tons): "))
-        v = Truck(s, f, c)
-
-    v.show()
-    v.extra()
-    
+    v.show()      # all inputs first
+    v.extra()     # extra input (cargo if truck)
+    v.display()   # final vehicle display

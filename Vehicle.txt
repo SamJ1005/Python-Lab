@@ -5,6 +5,8 @@ class Vehicle:
     def show(self):
         self.s = int(input("Speed: "))
         self.f = input("Fuel: ")
+
+    def display(self):
         print("Speed:", self.s, "km/h | Fuel:", self.f)
 
 class Car(Vehicle):
@@ -21,6 +23,7 @@ class Truck(Vehicle):
         self.c = c
 
     def extra(self):
+        self.c = float(input("Cargo capacity (tons): "))
         print("Type: Truck | Cargo:", self.c, "tons")
 
 while True:
@@ -32,8 +35,7 @@ while True:
     elif ch == 2:
         v = Motorcycle()
     elif ch == 3:
-        c = float(input("Cargo capacity (tons): "))
-        v = Truck(c=c)
+        v = Truck()
     elif ch == 4:
         print("Exiting Vehicle...")
         break
@@ -41,6 +43,6 @@ while True:
         print("Invalid choice")
         continue
 
-    v.show()
-    v.extra()
-    
+    v.show()      # all inputs first
+    v.extra()     # extra input (cargo if truck)
+    v.display()   # final vehicle display

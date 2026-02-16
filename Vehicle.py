@@ -43,6 +43,6 @@ while True:
         print("Invalid choice")
         continue
 
-    v.show()      # all inputs first
-    v.extra()     # extra input (cargo if truck)
-    v.display()   # final vehicle display
+    v.show()
+    v.extra()     
+    v.display()   

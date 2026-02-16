@@ -1,1 +1,0 @@
-print("File test from mint")

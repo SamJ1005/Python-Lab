@@ -1,11 +1,10 @@
 import createmath
 
 print("Mathematical Operations Module")
-
-a = float(input("Enter first number: "))
+a = float(input("\nEnter first number: "))
 b = float(input("Enter second number: "))
 
-print("Addition:", createmath.add(a, b))
+print("\nAddition:", createmath.add(a, b))
 print("Subtraction:", createmath.subtract(a, b))
 print("Multiplication:", createmath.multiply(a, b))
 print("Division:", createmath.divide(a, b))

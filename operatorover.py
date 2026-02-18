@@ -1,28 +1,26 @@
-print("\nUser Built-in Class Operator Overloading")
-x = int(input("Enter first number: "))
-y = int(input("Enter second number: "))
-
-print("Using built-in add class:", int.__add__(x, y))
-print("Using built-in mul class:", int.__mul__(x, y))
-s = input("Enter a string: ")
-n = int(input("Enter number of times to repeat string: "))
-print("Using built-in mul class for string:", str.__mul__(s, n))
-
-class A:
-    def __init__(self, value):
-        self.value = value
+class Complex:
+    def __init__(self, r, i):
+        self.r = r
+        self.i = i
 
     def __add__(self, other):
-        return self.value + other.value
+        return Complex(self.r + other.r, self.i + other.i)
 
-    def __mul__(self, other):
-        return self.value * other.value
+    def __sub__(self, other):
+        return Complex(self.r - other.r, self.i - other.i)
 
-print("\nUser Defined Class Operator Overloading")
-r1 = int(input("Enter first value: "))
-r2 = int(input("Enter second value: "))
-ob1 = A(r1)
-ob2 = A(r2)
+    def __str__(self):
+        return f"{self.r} + {self.i}i"
 
-print("Using + operator:", ob1 + ob2)
-print("Using * operator:", ob1 * ob2)
+
+r1 = int(input("Enter real part of first number: "))
+i1 = int(input("Enter imaginary part of first number: "))
+
+r2 = int(input("Enter real part of second number: "))
+i2 = int(input("Enter imaginary part of second number: "))
+
+c1 = Complex(r1, i1)
+c2 = Complex(r2, i2)
+
+print("Addition:", c1 + c2)
+print("Subtraction:", c1 - c2)

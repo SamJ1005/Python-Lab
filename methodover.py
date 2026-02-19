@@ -18,28 +18,15 @@ result = obj.add(*values)
 print("Sum =", result)
 
 # class MathOperations:
-
-#     def operate(self, operator, *numbers):
-#         if operator == "+":
-#             result = 0
-#             for i in numbers:
-#                 result += i
-#             return result
-        
-#         elif operator == "*":
-#             result = 1
-#             for i in numbers:
-#                 result *= i
-#             return result
-
+#     def add(self, *numbers):
+#         total = 0
+#         for num in numbers:
+#             total += num
+#         return total
 
 # obj = MathOperations()
 
-# op = input("Enter operation (+ or *): ")
-# n = int(input("How many numbers? "))
+# print("Sum of 2 numbers:", obj.add(5, 10))
+# print("Sum of 3 numbers:", obj.add(1, 2, 3))
+# print("Sum of 5 numbers:", obj.add(4, 5, 6, 7, 8))
 
-# values = []
-# for i in range(n):
-#     values.append(int(input("Enter number: ")))
-
-# print("Result =", obj.operate(op, *values))

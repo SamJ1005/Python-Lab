@@ -11,10 +11,10 @@ class Complex:
         return Complex(self.r - other.r, self.i - other.i)
 
     def __str__(self):
-        if self.imag >= 0:
-            return f"{self.real} + {self.imag}i"
+        if self.i >= 0:
+            return f"{self.r} + {abs(self.i)}i"
         else:
-            return f"{self.real} - {self.imag}i"
+            return f"{self.r} - {abs(self.i)}i"
 
 r1 = int(input("Enter real part of first number: "))
 i1 = int(input("Enter imaginary part of first number: "))

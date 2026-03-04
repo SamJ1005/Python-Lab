@@ -1,1 +1,1 @@
-print("Successfully open the file")
+print("File successfully opened!")

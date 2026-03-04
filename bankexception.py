@@ -8,7 +8,6 @@ while True:
     print("2. Deposit")
     print("3. Withdraw")
     print("4. Exit")
-
     choice = input("Enter choice: ")
 
     try:

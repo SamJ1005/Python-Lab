@@ -1,5 +1,3 @@
-# Program 15 - Simple Version
-
 text = input("Enter text to write into file: ")
 
 f = open("sample.txt", "w")

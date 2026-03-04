@@ -1,6 +1,4 @@
-# Program 16 - Simple Version
-
-n = int(input("How many items to store? "))
+n = int(input("How many items to be in the list? "))
 
 items = []
 

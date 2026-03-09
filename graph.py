@@ -1,3 +1,5 @@
+#Run this command, and install this package in your terminal to run this code
+#pip3 install pandas matplotlib
 import pandas as pd
 import matplotlib.pyplot as plt
 
